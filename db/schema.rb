@@ -13,29 +13,32 @@
 
 ActiveRecord::Schema.define(version: 20160307234737) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "charlas", force: :cascade do |t|
-    t.string   "expositor",           limit: 255
-    t.text     "resumen",             limit: 65535
+    t.string   "expositor"
+    t.text     "resumen"
     t.datetime "hora"
-    t.string   "tema",                limit: 255
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
-    t.string   "avatar_file_name",    limit: 255
-    t.string   "avatar_content_type", limit: 255
-    t.integer  "avatar_file_size",    limit: 4
+    t.string   "tema"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string   "horas",               limit: 255
-    t.string   "minutos",             limit: 255
+    t.string   "horas"
+    t.string   "minutos"
   end
 
   create_table "distros", force: :cascade do |t|
-    t.string   "nombre",              limit: 255
-    t.string   "url",                 limit: 255
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.string   "avatar_file_name",    limit: 255
-    t.string   "avatar_content_type", limit: 255
-    t.integer  "avatar_file_size",    limit: 4
+    t.string   "nombre"
+    t.string   "url"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
   end
 
@@ -45,37 +48,37 @@ ActiveRecord::Schema.define(version: 20160307234737) do
   end
 
   create_table "imagens", force: :cascade do |t|
-    t.integer  "distro_id",           limit: 4
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
-    t.string   "avatar_file_name",    limit: 255
-    t.string   "avatar_content_type", limit: 255
-    t.integer  "avatar_file_size",    limit: 4
+    t.integer  "distro_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
   end
 
   add_index "imagens", ["distro_id"], name: "index_imagens_on_distro_id", using: :btree
 
   create_table "requerimientos", force: :cascade do |t|
-    t.string   "requiere",   limit: 255
-    t.integer  "distro_id",  limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "requiere"
+    t.integer  "distro_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "requerimientos", ["distro_id"], name: "index_requerimientos_on_distro_id", using: :btree
 
   create_table "usuarios", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "", null: false
-    t.string   "encrypted_password",     limit: 255, default: "", null: false
-    t.string   "reset_password_token",   limit: 255
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip",     limit: 255
-    t.string   "last_sign_in_ip",        limit: 255
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
