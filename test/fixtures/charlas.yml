@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  expositor: MyString
+  resumen: MyText
+  hora: 2016-03-03 11:32:28
+  tema: MyString
+
+two:
+  expositor: MyString
+  resumen: MyText
+  hora: 2016-03-03 11:32:28
+  tema: MyString

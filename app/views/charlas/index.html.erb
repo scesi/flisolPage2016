@@ -1,0 +1,20 @@
+<p id="notice">
+  <%= notice %></p>
+
+<h1 class="white-text">Charlas Flisol 2016</h1>
+
+<div class="row">
+  <% @charlas.each do |charla| %>
+  <div class="col s12 m12">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title"></span>
+        <h3><%= charla.tema %></h2>
+        <h5 class="teal-text"><%= charla.expositor %></h4>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<%= link_to 'New Charla',new_charla_path, class: "waves-effect waves-light btn" %>

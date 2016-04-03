@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+<h1 class="center"> <%= @charla.tema %> </h1>
+  
+<h3><%= @charla.expositor %></h3>
+<%= image_tag @charla.avatar.url, widith: "300", heidth: "300", class: "responsive-img" %>
+</br>
+
+<h5>	
+<strong>Hora:</strong>
+</h5>
+
+<h3>
+	<%= @charla.hora %>
+</h3>
+
+<%= link_to 'Edit' ,edit_charla_path(@charla), class: "waves-effect waves-light btn" %> |
+<%= link_to 'Back', charlas_path, class: "waves-effect waves-light btn" %>
+</br></br>

@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h3 class="contrast white-text">Distros que se instalaran en Flisol UMSS</h3>
+<div class="row">
+<% @distros.each do |distro| %>
+    <div class="col s12 m6">
+    <div class="card z-depth-3">
+        <div class="card-image activator waves-effect waves-block waves-light">
+          <%= image_tag distro.avatar.url, width:"400", height: "400", class: "activator"%>
+        </div>
+        <div class="card-content blue-grey">
+        <span class="card-title activator white-text"><%=distro.nombre%><i class="mdi-navigation-menu medium right"></i></span>
+          </br>
+          <%= link_to  'Mas info' , distro , class: "waves-effect waves-light btn liten"%>
+        </div>
+        <div class="card-reveal blue-grey">
+          <span class="card-title grey-text teal"><i class="mdi-navigation-close medium right"></i></span>
+          <h5 class="white-text">requerimientos: </h5>
+          <p><%= render distro.requerimientos %></p>
+        </div>
+    </div>
+    </div>
+<% end %>
+</div>
+
+<%= link_to 'Add' ,new_distro_path,class: "waves-effect waves-light btn liten" %>

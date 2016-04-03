@@ -1,0 +1,35 @@
+<%= form_for @charla, url: charlas_path, html: { multipart: true } do |f| %>
+
+  <% if @charla.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@charla.errors.count, "error") %> prohibited this charla from being saved:</h2>
+
+      <ul>
+      <% @charla.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :expositor %><br>
+    <%= f.text_field :expositor %>
+  </div>
+
+  <div class="field">
+    <%= f.label :resumen %><br>
+    <%= f.text_area :resumen %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :tema %><br>
+    <%= f.text_field :tema %>
+  </div>
+
+  <%= f.file_field :avatar, class: "file-field input-field" %>
+
+  <div class="actions">
+    <%= f.submit :class => 'btn'%>
+  </div>
+<% end %>

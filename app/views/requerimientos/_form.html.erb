@@ -1,0 +1,12 @@
+
+	
+<h5 class="white-text" >agregar requerimientos</h5>
+<div class="row">
+<%= form_for([@distro, @distro.requerimientos.build]) do |f| %>
+  <div class="input-field col s12">
+    <%= f.label :requiere %><br>
+    <%= f.text_field :requiere%>
+  </div>
+    <%= f.submit class: "waves-effect waves-light btn" %>
+<% end %>
+</div>

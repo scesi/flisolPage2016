@@ -1,0 +1,11 @@
+<p>agregar imagen</p>
+<div class="row">
+<%= form_for([@distro, @distro.imagens.build]) do |f| %>
+  <div class="input-field col s12">
+    <%= f.file_field :avatar%>
+  </div>
+  </br>
+</br>
+    <%= f.submit class: "waves-effect waves-light btn" %>
+<% end %>
+</div>
