@@ -217,6 +217,7 @@ Devise.setup do |config|
   config.sign_out_via = :delete
 
   config.secret_key = ENV['DEVISE_SECRET_KEY'] if Rails.env.production?
+  config.secret_key = '28d7087c42af5361d9f2d1b852d7439605bc17579bc14145a9725f5b6c5202126e53efb5c3bfdedee0ce8feb43cac56e78fe299fbb38e5ed593a0a1de39aa26a'
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
